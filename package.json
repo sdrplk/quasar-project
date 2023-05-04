@@ -6,11 +6,12 @@
   "author": "Sudhakar Behera <90712337+sudhakarmako@users.noreply.github.com>",
   "private": true,
   "scripts": {
+    "main": "dist/electron/UnPacked/app.asar/electron-main.jsc",
     "lint": "eslint --ext .js,.vue ./",
     "format": "prettier --write \"**/*.{js,vue,scss,html,md,json}\" --ignore-path .gitignore",
     "test": "echo \"No test specified\" && exit 0",
     "dev": "quasar dev",
-    "build": "quasar build"
+    "build": "quasar build -m electron && node ./encrypt.js"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
@@ -21,12 +22,15 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.13.14",
+    "@quasar/app-webpack": "^3.0.0",
+    "bytenode": "^1.4.1",
+    "electron": "^24.1.3",
+    "electron-packager": "^15.2.0",
     "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-vue": "^9.0.0",
     "eslint-webpack-plugin": "^3.1.1",
-    "eslint-config-prettier": "^8.1.0",
-    "prettier": "^2.5.1",
-    "@quasar/app-webpack": "^3.0.0"
+    "prettier": "^2.5.1"
   },
   "browserslist": [
     "last 10 Chrome versions",
